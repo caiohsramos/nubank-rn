@@ -1,14 +1,13 @@
 import React from 'react'
+// eslint-disable-next-line import/no-unresolved
+import { StatusBar } from 'react-native'
 import Router from './routes'
-import { StatusBar } from "react-native";
 
-const App = () => {
-  return (
-    <>
-      <StatusBar barStyle="light-content" backgroundColor="#8B10AE" />
-      <Router />
-    </>
-  )
-}
+const App = () => (
+  <>
+    <StatusBar barStyle="light-content" backgroundColor="#8B10AE" />
+    <Router />
+  </>
+)
 
 export default App

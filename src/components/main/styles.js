@@ -1,5 +1,6 @@
-import { Animated } from "react-native"
-import styled from "styled-components/native"
+// eslint-disable-next-line import/no-unresolved
+import { Animated } from 'react-native'
+import styled from 'styled-components/native'
 
 export const Container = styled.View`
   flex: 1;
@@ -59,5 +60,3 @@ export const Annotation = styled.Text`
   font-size: 12px;
   color: #333;
 `
-
-

@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import { StyleSheet, Animated } from 'react-native'
 import styled from 'styled-components/native'
 

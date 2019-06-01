@@ -1,12 +1,16 @@
 import React from 'react'
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { MaterialIcons } from '@expo/vector-icons'
-import { Animated } from "react-native"
+// eslint-disable-next-line import/no-unresolved
+import { Animated } from 'react-native'
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { PanGestureHandler, State } from 'react-native-gesture-handler'
-
 import Header from '../header'
 import Tabs from '../tabs'
 import Menu from '../menu'
-import { Container, Content, Card, CardHeader, CardContent, CardFooter, Title, Description, Annotation } from './styles'
+import {
+  Container, Content, Card, CardHeader, CardContent, CardFooter, Title, Description, Annotation,
+} from './styles'
 
 export default () => {
   let offset = 0
@@ -15,11 +19,11 @@ export default () => {
     [
       {
         nativeEvent: {
-          translationY: translateY
-        }
-      }
+          translationY: translateY,
+        },
+      },
     ],
-    { useNativeDriver: true }
+    { useNativeDriver: true },
   )
 
   const onHandlerStateChange = (event) => {
@@ -38,7 +42,7 @@ export default () => {
       Animated.timing(translateY, {
         toValue: opened ? 320 : 0,
         duration: 200,
-        useNativeDriver: true
+        useNativeDriver: true,
       }).start(() => {
         offset = opened ? 380 : 0
         translateY.setOffset(offset)
@@ -61,10 +65,11 @@ export default () => {
               translateY: translateY.interpolate({
                 inputRange: [-350, 0, 330],
                 outputRange: [-50, 0, 330],
-                extrapolate: 'clamp'
+                extrapolate: 'clamp',
               }),
-            }]
-          }}>
+            }],
+          }}
+          >
             <CardHeader>
               <MaterialIcons name="attach-money" size={28} color="#666" />
               <MaterialIcons name="visibility-off" size={28} color="#666" />
@@ -76,7 +81,7 @@ export default () => {
             <CardFooter>
               <Annotation>
                 Transferência de R$ 20,00 recebida de Caio Ramos às 18:00h
-            </Annotation>
+              </Annotation>
             </CardFooter>
           </Card>
         </PanGestureHandler>
@@ -85,4 +90,3 @@ export default () => {
     </Container>
   )
 }
-
